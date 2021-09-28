@@ -10,31 +10,32 @@ function post_data() {
 	frm1.submit();
 }
 </script>
-<link rel="stylesheet" href="../css/temp.css">
+<link rel="stylesheet" href="../css/temp.css?v=3">
 </head>
 <body>
 <h3>동아리 커뮤니티 글 수정</h3>
 <hr>
-<form name="frm1" method="post" action="updateAction.jsp">
+<form name="frm1" method="post" action="updateSave.jsp">
+ <input type="hidden" name="idx" value="${bean.idx}">
  
  <table>
- 	<tr><td width="25%" >제목</td>
+ 	<tr><th width="25%" >제목</th>
  		<td><input type="text" name="subject" value="${bean.subject}" size="70" required="required"></td>
  	</tr>
- 	<tr><td class="td1">작성자</td>
+ 	<tr><th>작성자</th>
  		<td><input type="text" name="name" value="${bean.name}" size="70" disabled></td>
  	</tr>
  	
- 	<tr><td class="td1">글 비밀번호</td>
+ 	<tr><th class="td1">글 비밀번호</th>
  		<td><input type="password" name="password" size="70" class="input1"></td>
  	</tr>
- 	<tr><td class="td1">내용</td>  <!-- textarea 의 크기 : rows="20" cols="80" -->
+ 	<tr><th class="td1">내용</th>  <!-- textarea 의 크기 : rows="20" cols="80" -->
  		<td><textarea  rows="20" cols="80" name="content" required="required">${bean.content}</textarea></td>
  	</tr>
  	<tr><td colspan="2" align="center">
  	<input type="submit" value="저장">
  	<input type="reset"  value="다시쓰기">
- 	<input type="button" value="목록">
+ 	<input type="button" value="목록" class="bnt" onclick="location.href='listAction.jsp'">
  	</td></tr>
  </table>
  </form>

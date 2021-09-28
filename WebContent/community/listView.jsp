@@ -38,9 +38,27 @@
  	</c:forEach>
 </ul>
 <div style="margin:auto;">
- 	Go!<a class="button" href="insert.jsp">글쓰기</a>
- 	<a class="button" href="${pageContext.request.contextPath }">홈</a>작성글 총 개수 : 
-</div>
+ 	Go!<a class="button" href="insertView.jsp">글쓰기</a>&nbsp;&nbsp;
+ 	<a class="button" href="${pageContext.request.contextPath }">홈 : ${pageContext.request.contextPath } 
+ 	</a>&nbsp;&nbsp;&nbsp;작성글 총 개수 :
+
+</div><!--request.contextPath : request.getcontextPath 메소드 실행 결과와 동일.
+		  listAction.jsp 에서 pageContext 객체를 사용하여 listCiew.jsp 로 요청이 전달되었기 때문에
+		  pageContext.requets 로 합니다.
+		  
+		  pageContext 객체(jsp내장객체) : jsp파일(jsp페이지) 1개와 대응되는 객체.
+		  -->
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

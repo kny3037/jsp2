@@ -15,6 +15,15 @@
 		select count(*) from freeboard
 	</select>
 	
+	<insert id="insert" parameterType="dto.Freeboard">
+		insert into freeboard (name,password,subject,content,ip)
+		values(#{name},#{password},#{subject},#{content},#{ip})
+	</insert>
+	
+	<update id="update" parameterType="dto.Freeboard">
+		update freeboard set subject =#{subject}, content=#{content}
+		where idx =#{idx} 	
+	</update>
 	
 </mapper>
 <!-- ${ } : 표현식. 중괄호안에 수식에 대한 연산결과값을 구해서 출력
