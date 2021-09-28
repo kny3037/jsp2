@@ -12,7 +12,8 @@ create table freeboard(
 	commentCount smallint default 0,			-- 댓글 개수
 	primary key(idx)
 );
-
+alter table freeboard modify column wdate timestamp
+default current_timestamp;   -- timezone에 따라 설정
 
 insert into freeboard (name,password,subject,content,ip)
 values ('honey','1111','웰컴~~','하이 반가워','192.168.17.3');

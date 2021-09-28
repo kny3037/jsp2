@@ -19,11 +19,9 @@
 	Map<String,Integer> map = new HashMap<>();
 	map.put("pageSize",pageSize);
 	map.put("startNo",startNo);
-	
 	List<Freeboard> list = dao.getList(map);
 	
-//	out.print(list);
-
-	request.setAttribute("blists", list);
+	request.setAttribute("list", list);
 	pageContext.forward("listView.jsp");
+//	out.print(list);
 %>

@@ -13,28 +13,28 @@
 <h3>동아리 커뮤니티</h3>
 <hr>
 <div style="margin:auto;">
-<ul>
+<ul id="main">
 	<li>
 		<ul  class="row">
-		<li>번호</li>
-		<li>제목</li>
-		<li>작성자</li>
-		<li>조회수</li>
-		<li>작성일</li>
+			<li>번호</li>   <!-- css child(1) -->
+			<li>제목</li>   <!-- css child(2) -->
+			<li>작성자</li>  <!-- css child(3) -->
+			<li>조회수</li>  <!-- css child(4) -->
+			<li>작성일</li>  <!-- css child(5) -->
 		</ul>
 	</li>
- 	<c:forEach var="vo" items="${blists}"> <!-- vo가 Freeboard타입  blists.getList() 실행-->
-<li>
-<ul  class="row">
-	<li>${vo.idx }</li>
-	<li><a href="detailAction.jsp?idx=${vo.idx}&pno=1" class="title">${vo.subject }</a>
- 		...<span style="color:orange;font-size: 80%;">(${vo.commentCount })
- 		</span></li>
-	<li>${vo.name }</li>
-	<li>${vo.readCount }</li>
-	<li><fmt:formatDate value="${vo.wdate }" pattern="yyyy-MM-dd"/></li>
-</ul>
-</li>
+ 	<c:forEach var="vo" items="${list}"> 
+	<li>
+	<ul  class="row">
+		<li>${vo.idx }</li>
+		<li><a href="detailAction.jsp?idx=${vo.idx}&page=1" class="title">${vo.subject }</a>
+	 		...<span style="color:orange;font-size: 80%;">(${vo.commentCount })
+	 		</span></li>
+		<li>${vo.name }</li>
+		<li>${vo.readCount }</li>
+		<li><fmt:formatDate value="${vo.wdate }" pattern="yyyy-MM-dd"/></li>
+	</ul>
+	</li>
  	</c:forEach>
 </ul>
 <div style="margin:auto;">
@@ -44,11 +44,3 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
