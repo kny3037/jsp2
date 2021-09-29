@@ -15,13 +15,13 @@ ul {
 .row > li{
 	padding: 3px 0px;
 	align-self: center;
-	padding : 10px;
-	margin: 6px;
+	padding : 10px;   /* 박스 안쪽 공백 */
+	margin: 6px;	  /* 박스 바깥쪽 공백 */
 	text-align: center;
 }
 .row > li:nth-child(1){
 	flex-basis:20%;
-	background-color: #7E57C2;
+	background-color: #41168d;
 	color:white;
 	border-radius: 3px;
 	font-size: 0.8em;
@@ -31,10 +31,10 @@ ul {
 	color:#1A237E;
 }
 .row > li:nth-child(3){
-	flex-basis:20%;
-	background-color: #7E57C2;
+	flex-basis:20%;   /* 창의 크기에 따라 사이즈 변화, %는 변하는 값 */
+	background-color: #41168d;
 	color:white;
-	border-radius: 3px;
+	border-radius: 3px;  /* px,em은 고정 값 */
 	font-size: 0.8em;
 }
 .row > li:nth-child(4){
@@ -48,10 +48,12 @@ ul {
 #content li:first-child {
 	padding: 3px;
 	border-radius: 3px;
-	border: 1px solid #1A237E;
+	background-color: #d9d9d9;
 	text-align: center;
-	font-size: 0.7em;
+	font-size: 1em;
 	margin: 7px 0px;
+	font-family: noto sans;
+	color: #333;
 }
 #content li:nth-child(2) {
 	padding: 5px;
@@ -60,7 +62,7 @@ ul {
 	padding : 1px 7px;
 }
 .button {
-    background-color: #9575CD;
+    background-color: #bf9ff8;
     color:white;
     padding: 7px 25px;
     text-decoration: none;  /*  밑줄제거  */
@@ -86,7 +88,8 @@ span {
 	border-radius: 3px;
 }
 .line {
-	border-top: 2px solid #7E57C2;  /* 강 */
+	border-top: 1px solid #7E57C2;  /* 강 */
+	border-bottom: 1px solid #7E57C2;
 }
 .comment{
 	min-height: 80px;
@@ -113,10 +116,10 @@ span {
 }
 
 pre{
-	font-size:1.1em;
-	color : blue;
+	font-size:0.9em;
+	color : #999;
 	padding-bottom: 10px;
-	line-height: 1.2em;
+	line-height: 1.5em;
 	font-family: 맑은고딕, Malgun Gothic, sans-serif;
 }
 

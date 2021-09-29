@@ -13,6 +13,7 @@
 	Freeboard bean = dao.getOne(idx);
 	
 	CommentDao cdao = CommentDao.getInstance();
+	cdao.updateCountAll(idx);    //댓글 갯수 update
 	List<Comment> cmts = cdao.getComments(idx);
 	request.setAttribute("cmtlist", cmts);
 	
