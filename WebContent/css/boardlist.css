@@ -29,5 +29,27 @@ ul .row {
 .row > li:nth-child(5){
 	flex-basis:20%;
 }
+.pagenum {
+    border: 1px solid gray;
+    color: #0178b6;
+    padding: 3px 5px;
+    text-decoration: none;  /*  밑줄제거  */
+    cursor: pointer;
+    display: inline-block;
+   	text-align:center;
+  	 font-size: 9pt;
+  	 border-radius: 3px;
+}
+.pagenum:hover{
+     background-color:#b7bab1;
+     color:white;
+} 
+.current{
+	background-color:#b7bab1;
+	color:d9d9d9;
+}
+
+
+
 
 	

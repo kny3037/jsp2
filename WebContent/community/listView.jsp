@@ -23,11 +23,12 @@
 			<li>작성일</li>  <!-- css child(5) -->
 		</ul>
 	</li>
+	<c:set var="pno" value="${pageDto.currentPage}"/>
  	<c:forEach var="vo" items="${list}"> 
 	<li>
 	<ul  class="row">
 		<li>${vo.idx }</li>
-		<li><a href="detailAction.jsp?idx=${vo.idx}&page=1" class="title">${vo.subject }</a>
+		<li><a href="detailAction.jsp?idx=${vo.idx}&page=${pno}" class="title">${vo.subject }</a>
 	 		...<span style="color:orange;font-size: 80%;">(${vo.commentCount })
 	 		</span></li>
 		<li>${vo.name }</li>
@@ -51,21 +52,46 @@
 <div style="margin:auto;">
  	Go!<a class="button" href="insertView.jsp">글쓰기</a>&nbsp;&nbsp;
  	<a class="button" href="${pageContext.request.contextPath }">홈 : ${pageContext.request.contextPath } 
- 	</a>&nbsp;&nbsp;&nbsp;작성글 총 개수 :
+ 	</a>&nbsp;&nbsp;&nbsp;작성글 총 개수 : ${pageDto.totalCount }
 
-</div><!--request.contextPath : request.getcontextPath 메소드 실행 결과와 동일.
-		  listAction.jsp 에서 pageContext 객체를 사용하여 listCiew.jsp 로 요청이 전달되었기 때문에
-		  pageContext.requets 로 합니다.
-		  
-		  pageContext 객체(jsp내장객체) : jsp파일(jsp페이지) 1개와 대응되는 객체.
-		  -->
+</div>
+<!-- 글목록 페이지 처리 : Pagination -->
+<div style="text-align: center;">
+<hr>
+<!-- href="listAction.jsp?page=1" 요청 url 현재와 같을 때 생략하고 ? 뒤에 파라미터 값만 변경합니다. -->
+	
+	<c:if test="${pageDto.startPage !=1 }">
+		<a class="pagenum" href="?page=1">&lt;&lt;</a>
+		<a class="pagenum" href="?page=${pageDto.startPage-1 }">&lt;</a>
+		<!-- 현재페이지를 startPage값에서 -1로 변경하면 요청이 변경되면서 자동계산.-->
+	</c:if>
+	
+	<c:forEach var="i" begin="${pageDto.startPage }" end="${pageDto.endPage }">
+		<a class="pagenum
+		<c:if test="${pageDto.currentPage == i }">current</c:if>
+		"href="?page=${i}">${i }</a>
+	</c:forEach>
+	
+	<c:if test="${pageDto.endPage !=pageDto.totalPage }">
+		<a class="pagenum" href="?page=${pageDto.endPage+1}">&gt;</a>  <!-- startPage를 현재 startPage +10-->
+		<!-- 현재페이지를 endPage값에서 +1로 변경하면 요청이 변경되면서 자동계산.-->
+		<a class="pagenum" href="?page=${pageDto.totalPage }">&gt;&gt;</a>  <!-- 마지막페이지 -->
+	</c:if>
+</div>
+
+
 </div>
 </body>
 </html>
 
 
 
-
+<!--request.contextPath : request.getcontextPath 메소드 실행 결과와 동일.
+		  listAction.jsp 에서 pageContext 객체를 사용하여 listCiew.jsp 로 요청이 전달되었기 때문에
+		  pageContext.requets 로 합니다.
+		  
+		  pageContext 객체(jsp내장객체) : jsp파일(jsp페이지) 1개와 대응되는 객체.
+		  -->
 
 
 

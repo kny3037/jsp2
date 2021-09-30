@@ -6,6 +6,7 @@
 	//가장 첫줄에 작성할 코드는? : request.setCharacterEncoding("UTF-8");
 	//수정 버튼 -> 내용 변경 -> 저장버튼으로 실행
 	request.setCharacterEncoding("UTF-8");
+	int pageNo = Integer.parseInt(request.getParameter("page"));
 	int idx = Integer.parseInt(request.getParameter("idx"));
 	String subject = request.getParameter("subject");
 //	String password = request.getParameter("password");
@@ -22,7 +23,7 @@
 	FreeboardDao dao = FreeboardDao.getInstance();
 	dao.update(dto);
 	/* response.sendRedirect("updateAction.jsp?idx="+idx); */
-	response.sendRedirect("updateAction.jsp?idx="+idx+"&page=1");
+	response.sendRedirect("detailAction.jsp?idx="+idx+"&page="+pageNo);
 
 
 
