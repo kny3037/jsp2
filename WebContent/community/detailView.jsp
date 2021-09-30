@@ -53,7 +53,7 @@
 	</div>
 	<!-- 메인글 출력 끝 -->
 	<!-- 댓글 시작 -->
-	<form action="commentAction.jsp" method="post" name="frmCmt">
+	<form action="commentAction.jsp" method="post" name="frmCmt">    <!-- POST 메소드는 주로 새로운 리소스를 생성(create)할 때 사용 -->
 	<input type = "hidden" name="mref" value="${bean.idx}">
 		<hr class="line">
 		<div>

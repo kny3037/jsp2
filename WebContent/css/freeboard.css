@@ -84,7 +84,7 @@ span {
 }
 .input{
 	padding: 7px 15px;
-	border: 1px solid #9575CD;  /* 중 */
+	border: 1px solid #9575CD;  /* 중 */   /* solid : 단색 */
 	border-radius: 3px;
 }
 .line {
