@@ -30,15 +30,15 @@ ul .row {
 	flex-basis:20%;
 }
 .pagenum {
-    border: 1px solid gray;
+	border: 0px;      /*바깥에 선을 없애고 싶으면 border 0px로 설정*/
     color: #0178b6;
     padding: 3px 5px;
     text-decoration: none;  /*  밑줄제거  */
     cursor: pointer;
     display: inline-block;
    	text-align:center;
-  	 font-size: 9pt;
-  	 border-radius: 3px;
+  	font-size: 9pt;
+  	border-radius: 3px;
 }
 .pagenum:hover{
      background-color:#b7bab1;
@@ -48,7 +48,7 @@ ul .row {
 	background-color:#b7bab1;
 	color:d9d9d9;
 }
-
+    
 
 
 
