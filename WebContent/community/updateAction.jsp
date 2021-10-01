@@ -13,5 +13,4 @@
 	request.setAttribute("bean", bean);
 	pageContext.forward("updateView.jsp");
 	
-
 %>

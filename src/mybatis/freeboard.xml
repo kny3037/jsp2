@@ -33,6 +33,19 @@
 		select * from freeboard where idx=#{idx} and password =#{password}
 	</select>
 	
+	<!-- 조회수 증가 -->
+	<update id="readCount" parameterType="int">
+      update freeboard set readCount = readCount+1 where idx = #{idx}
+   </update>
+	
+	<!-- 나중에 customer.xml로 옮기기 -->
+	<select id="loginCheck" parameterType="java.util.Map" resultType="dto.SessionDto">
+		select * from customer where email = #{email} 
+		and password = #{password}
+	</select>
+	
+	
+	
 </mapper>
 <!-- ${ } : 표현식. 중괄호안에 수식에 대한 연산결과값을 구해서 출력
      #{ } : 무조건 문자열(' '기호사용)로 중괄호 안의 값을 처리합니다. -->

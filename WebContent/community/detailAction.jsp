@@ -6,12 +6,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+
+	//글 상세보기
 	int idx = Integer.parseInt(request.getParameter("idx"));
 	int pageNo = Integer.parseInt(request.getParameter("page"));
 	
 	FreeboardDao dao = FreeboardDao.getInstance();
+	if(session.getAttribute("readIdx")!=null){
+		StringBuilder readIdx = (StringBuilder)session.getAttribute("readIdx");
+		boolean status = readIdx.toString().contains("/"+idx+"/");
+		if(!status){ //읽은 글 목록 문자열에 idx가 포함되어있지 않으면 
+			dao.readCount(idx);  //조회수 증가
+			readIdx.append(idx + "/");   //읽은 글 목록에 추가
+		}
+	}else{
+		StringBuilder readIdx=new StringBuilder("/");
+		session.setAttribute("readIdx", readIdx);
+	}
+	
+	
+	
+	
 	Freeboard bean = dao.getOne(idx);
 	
+	//freeboard 테이블 idx 의 댓글목록 가져오기
 	CommentDao cdao = CommentDao.getInstance();
 	cdao.updateCountAll(idx);    //댓글 갯수 update
 	List<Comment> cmts = cdao.getComments(idx);

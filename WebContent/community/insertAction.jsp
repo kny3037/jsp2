@@ -4,7 +4,7 @@
     pageEncoding="UTF-8"%>  <!-- 1시43분 다시 듣기 -->
 <%
 	//가장 첫줄에 작성할 코드는? : request.setCharacterEncoding("UTF-8");
-
+//테이블 insert
 	request.setCharacterEncoding("UTF-8");
 	String subject = request.getParameter("subject");
 	String name = request.getParameter("name");
