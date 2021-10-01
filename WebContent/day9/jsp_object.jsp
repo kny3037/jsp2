@@ -39,8 +39,6 @@
 //	out.print(message); --> nullpointerException오류.  왜? -> 2번째 주석때문에
 	out.print(pageContext.getException());
 	
-
-
 %>
 </body>
 </html>
