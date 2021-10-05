@@ -12,7 +12,8 @@
 	int pageNo = Integer.parseInt(request.getParameter("page"));
 	
 	FreeboardDao dao = FreeboardDao.getInstance();
-	if(session.getAttribute("readIdx")!=null){
+	if(session.getAttribute("readIdx")!=null){     
+		//세션은 클라이언트 별로 서버에 저장되는 정보, 프로퍼티는 객체 내에 선언되어있는 변수를 의미,애트리뷰트는 속성
 		StringBuilder readIdx = (StringBuilder)session.getAttribute("readIdx");
 		boolean status = readIdx.toString().contains("/"+idx+"/");
 		if(!status){ //읽은 글 목록 문자열에 idx가 포함되어있지 않으면 

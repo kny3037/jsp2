@@ -104,9 +104,17 @@ update freeboard set commentCount=(
 -- 글 상세보기에서 댓글 입력 후 저장할 때
 update freeboard set commentCount=commentCount+1 where idx =0;
 
+delete from freeboard where idx = 100;  -- 댓글이 있는 메인글 삭제
 
+-- 로그인 sql
+select * from customer where email = "hong1@naver.com" 
+and password = "0000";  -- 틀린 패스워드 (결과 null)
 
+select * from customer where email = "hhong1@naver.com" 
+and password = "11111111";   -- id가 없는 사용자 (결과 null)
 
+select * from customer where email = "hong1@naver.com" 
+and password = "11111111";   -- 맞는 패스워드 (결과 not null)
 
 
 

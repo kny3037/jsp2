@@ -10,7 +10,7 @@
 	String name = request.getParameter("name");
 	String password = request.getParameter("password");
 	String content = request.getParameter("content");
-	String ip = request.getRemoteAddr();
+	String ip = request.getRemoteAddr();    //ip 확인
 	
 	Freeboard dto = new Freeboard();
 	dto.setIp(ip);
